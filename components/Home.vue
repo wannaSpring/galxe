@@ -16,14 +16,12 @@ import "@esotericsoftware/spine-player/dist/spine-player.css";
 // import atlas from '@/assets/solution_page_1.atlas'
 
 
-
-
 export default {
   name: 'Home',
   components: { Nav, },
   data() {
     return {
-      spinePlayer: null,
+      spinePlayer: Object.freeze({}),
     }
   },
   mounted() {
@@ -31,10 +29,12 @@ export default {
   },
   methods: {
     changeAnimation() {
+      console.log(test)
+
       this.spinePlayer.pause();
     },
     initSpine() {
-      new spine.SpinePlayer("player-container", {
+      var test = new spine.SpinePlayer("player-container", {
         jsonUrl: '/mySpine/solution_page_1.json',
         atlasUrl: '/mySpine/solution_page_1.atlas',
         showControls: false,
@@ -63,3 +63,6 @@ export default {
   height: 100vh; */
 }
 </style>
+
+
+
