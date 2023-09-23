@@ -16,40 +16,40 @@ import "@esotericsoftware/spine-player/dist/spine-player.css";
 // import atlas from '@/assets/solution_page_1.atlas'
 
 
-function initSpine() {
-  new spine.SpinePlayer("player-container", {
-    jsonUrl: '/mySpine/solution_page_1.json',
-    atlasUrl: '/mySpine/solution_page_1.atlas',
-    showControls: false,
-    backgroundColor: "#00000000",
-    alpha: true,
-    animations: ['1'],
-    viewport: {
-      x: -971.22, y: -563.7, width: 1920.24, height: 1079.68,
-       padLeft: 0,
-         padRight: 0,
-         padTop: 0,
-         padBottom: 0,
-    },
-    fullScreenBackgroundColor: '#000'
-  });
 
-}
 
 export default {
   name: 'Home',
   components: { Nav, },
   data() {
-      return {
-        spinePlayer: null,
-      }
-    },
+    return {
+      spinePlayer: null,
+    }
+  },
   mounted() {
-    initSpine();
+    this.initSpine();
   },
   methods: {
     changeAnimation() {
       this.spinePlayer.pause();
+    },
+    initSpine() {
+      new spine.SpinePlayer("player-container", {
+        jsonUrl: '/mySpine/solution_page_1.json',
+        atlasUrl: '/mySpine/solution_page_1.atlas',
+        showControls: false,
+        backgroundColor: "#00000000",
+        alpha: true,
+        animations: ['1'],
+        viewport: {
+          x: -971.22, y: -563.7, width: 1920.24, height: 1079.68,
+          padLeft: 0,
+          padRight: 0,
+          padTop: 0,
+          padBottom: 0,
+        },
+        fullScreenBackgroundColor: '#000'
+      });
     }
   }
 }
