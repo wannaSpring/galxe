@@ -1,0 +1,11 @@
+solution_page_1.png
+size:1898,1188
+filter:Linear,Linear
+pma:true
+spine/bg
+bounds:2,1086,100,100
+spine/main1
+bounds:104,617,1792,569
+offsets:0,14,1800,613
+spine/main2
+bounds:2,2,1800,613
