@@ -27,7 +27,11 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
+    // {
+    //   src: '@/plugins/pixi.js',
+    //   ssr: false
+    // }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -45,11 +49,15 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    vendor: ['pixi.js', 'pixi-spine','@pixi'],
     transpile: [
       /^element-ui/,
       '@esotericsoftware/spine-core',
       '@esotericsoftware/spine-player',
       '@esotericsoftware/spine-webgl',
+      'pixi.js',
+      '@pixi',
+      'pixi-spine',
     ],
-  }
+  },
 }
