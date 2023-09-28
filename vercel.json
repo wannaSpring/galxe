@@ -3,17 +3,10 @@
     {
       "src": "nuxt.config.js", // 配置文件
       "use": "@nuxtjs/vercel-builder", // 使用的构建工具
-      "config": {}
-    }
-  ],
-  "routes": [
-    {
-      "src": "/sw.js",
-      "continue": true,
-      "headers": {
-        "Cache-Control": "public, max-age=0, must-revalidate",
-        "Service-Worker-Allowed": "/"
+      "config": {
+        "serverFiles": ["server-middleware/**"]
       }
     }
   ]
+
 }
