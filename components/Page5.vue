@@ -5,15 +5,17 @@
         <div class="title">And That’s Not It</div>
         <div class="desc">We offer a whole lot more.</div>
       </div>
-      <div class="cardList">
-        <div v-for="(item) in list" :key="item.title" class="cardItem">
-          <div class="imgWrap"> <img :src="item.imgUrl" alt="Image" /></div>
-          <div class="text">
-            <div class="title">
-              {{ item.title }}
-            </div>
-            <div class="desc" :style="{ height: !item.isCollapsed ? 'auto' : 0, }">
-              {{ item.desc }}
+      <div class="cardListWrap">
+        <div class="cardList">
+          <div v-for="(item) in list" :key="item.title" class="cardItem">
+            <div class="imgWrap"> <img :src="item.imgUrl" alt="Image" /></div>
+            <div class="text">
+              <div class="title">
+                {{ item.title }}
+              </div>
+              <div class="desc" :style="{ height: !item.isCollapsed ? 'auto' : 0, }">
+                {{ item.desc }}
+              </div>
             </div>
           </div>
         </div>
@@ -42,7 +44,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="less" scoped>
 .Page5 {
   height: 1108px;
 }
@@ -58,7 +60,6 @@ export default {
 
 .containerWrap {
   padding-left: 390px;
-  width: 1663px;
 }
 
 .text {
@@ -81,18 +82,49 @@ export default {
   background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 159.72%);
   -webkit-background-clip: text;
   color: transparent;
-  font-size: 14px;
+  font-size: 24px;
   text-align: left;
   /* 左对齐 */
   width: 100%;
+  margin-top: 20px;
   /* 自动适应父元素宽度 */
 }
-.cardList {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 40px;
+
+.cardListWrap {
+  overflow-x: auto;
+  width: 1500px;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+    /* 设置滚动条宽度 */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    /* 设置滚动条滑块颜色 */
+    border-radius: 6px;
+    /* 设置滚动条滑块圆角 */
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* 设置滚动条轨道颜色 */
+  }
+
+  .cardList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    width: 1663px;
+    padding: 0 20px;
+
+
+  }
 }
+
+
+
 .cardItem {
   width: 400px;
   height: 548px;
@@ -135,7 +167,6 @@ export default {
   letter-spacing: 0em;
   text-align: left;
   color: rgba(255, 255, 255, 0.7)
-
 }
 </style>
 

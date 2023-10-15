@@ -1,24 +1,29 @@
 <template>
   <div class="image-collapse">
     <!-- 左侧图片展示区 -->
+
     <div class="image-container">
       <img :src="imageUrl" alt="Image" />
     </div>
 
     <!-- 右侧折叠项 -->
     <div class="collapse-items">
-      <div v-for="(item, index) in items" :key="index"
-        :class="{ 'collapse-item': true, 'collapse-item-open': !item.isCollapsed }">
-        <div class="item-header" @click="toggleCollapse(index)">
-          {{ item.title }}
-          <span :style="{ display: 'inline-block', transform: item.isCollapsed ? 'rotate(0deg)' : 'rotate(180deg)' }">
-            <Arrow />
-          </span>
+      <transition-group name="list" tag="ul">
+        <div v-for="(item, index) in items" :key="index"
+          :class="{ 'collapse-item': true, 'collapse-item-open': !item.isCollapsed }">
+          <div class="item-header" @click="toggleCollapse(index)">
+            {{ item.title }}
+            <span :style="{ display: 'inline-block', transform: item.isCollapsed ? 'rotate(0deg)' : 'rotate(180deg)' }">
+              <Arrow />
+            </span>
+          </div>
+          <transition name="list">
+            <div class="item-content" v-if="!item.isCollapsed">
+              {{ item.content }}
+            </div>
+          </transition>
         </div>
-        <div class="item-content" :style="{ height: !item.isCollapsed ? 'auto' : 0, }">
-          {{ item.content }}
-        </div>
-      </div>
+      </transition-group>
     </div>
   </div>
 </template>
@@ -31,6 +36,7 @@ import png3 from '@/assets/Frame119_3.png'
 import png4 from '@/assets/Frame119_4.png'
 import png5 from '@/assets/Frame119_5.png'
 import png6 from '@/assets/Frame119_6.png'
+
 export default {
   components: { Arrow },
   name: 'Collapse',
@@ -100,6 +106,24 @@ export default {
 </script>
 
 <style scoped>
+.list-move, /* 对移动中的元素应用的过渡 */
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.2s ease !important;
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+/* 确保将离开的元素从布局流中删除
+  以便能够正确地计算移动的动画。 */
+.list-leave-active {
+  position: absolute;
+}
+
 .image-collapse {
   display: flex;
   align-items: center;
@@ -114,29 +138,29 @@ export default {
 }
 
 .image-container img {
-  width: 860px;
-  height: 634px;
+  width: 680px;
+  height: 600px;
 }
 
 
 .collapse-items {
   flex: 1;
   width: 612px;
-  height: 100%;
+  height: 620px;
   margin-left: 24px;
 }
 
 .collapse-item {
   /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
   color: rgba(255, 255, 255, 1);
-  height: 76.4px;
+  /* height: 76.4px; */
   display: flex;
   justify-content: center;
   flex-direction: column;
   /* 固定折叠项的宽度 */
   overflow: hidden;
   /* transition: all 0.3s; */
-  padding: 0 26px;
+  padding: 22px 32px;
   position: relative;
 }
 
@@ -184,6 +208,13 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: white;
+  font-size: 24px;
+  font-family: Mona-Sans;
+  font-weight: 800;
+  line-height: 32px;
+  word-wrap: break-word;
+  margin-bottom: 16px;
 }
 
 .item-header span {
@@ -192,8 +223,13 @@ export default {
 
 .item-content {
   overflow: hidden;
-  transition: all 3s
+  transition: all 3s;
+  color: #CED3DB;
+  font-size: 16px;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word
 }
 
-/* 可以自定义样式以适应你的项目需求 */
-</style>
+/* 可以自定义样式以适应你的项目需求 */</style>

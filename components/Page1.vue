@@ -3,7 +3,7 @@
     <div id="player-container" ref="playerContainer" />
     <div class="decoration page1">
       <div class="text">
-        <div class="title">Your Web3 Community is Waiting</div>
+        <div class="title"><span>Your</span> <span>Web3 Community</span> <span>is Waiting</span></div>
         <div class="desc">Build and grow your Web3 community the authentic way. Reach, reward, and engage with millions
           of
           Web3 users
@@ -27,7 +27,20 @@
           <div class="desc">Trusted brands </div>
         </div>
       </div>
-      <el-button class="start" round>Get Started</el-button>
+      <div class="start">
+        <div
+          style="padding-left: 36px; padding-right: 36px; padding-top: 18px; padding-bottom: 18px; left: 0px; top: 13px; position: absolute; background: linear-gradient(86deg, #3C73F4 0%, #CB96EB 50%, #E27D3F 100%); box-shadow: 40px 40px 40px; border-radius: 8px; filter: blur(40px); justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+          <div
+            style="text-align: center; color: white; font-size: 20px; font-family: Mona-Sans; font-weight: 800; line-height: 28px; word-wrap: break-word">
+            Get Started</div>
+        </div>
+        <div
+          style="padding-left: 36px; padding-right: 36px; padding-top: 18px; padding-bottom: 18px; left: 0px; top: 0px; position: absolute; background: black; border-radius: 32px; border: 2px rgba(255, 255, 255, 0.70) solid; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+          <div
+            style="text-align: center; color: white; font-size: 20px; font-family: Mona-Sans; font-weight: 800; line-height: 28px; word-wrap: break-word">
+            Get Started</div>
+        </div>
+      </div>
       <div class="logolist">
         <LogoList />
       </div>
@@ -36,7 +49,7 @@
 </template>
 
 <script>
-import LogoList from './svg/LogoList.vue'
+import LogoList from './LogoList.vue'
 
 let player = null;
 export default {
@@ -120,7 +133,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="less" scoped>
 .page1Wrap {
   /* width: 1920px; */
   height: 1289px;
@@ -142,7 +155,7 @@ export default {
 }
 
 .text {
-  width: 800px;
+  width: 1280px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -150,11 +163,30 @@ export default {
 }
 
 .text .title {
-  background: linear-gradient(90.11deg, #1E5DFF 34.39%, #CB96EB 47.78%, #EC7F3C 57.15%),
-    linear-gradient(0deg, #FFFFFF, #FFFFFF);
-  -webkit-background-clip: text;
-  color: transparent;
-  font-size: 48px;
+  font-size: 64px;
+  font-family: Mona-Sans;
+  font-weight: 800;
+  line-height: 56px;
+  text-align: center;
+
+  span:nth-child(1) {
+    color: white;
+
+  }
+
+  span:nth-child(2) {
+    color: #1E5DFF;
+    background: linear-gradient(90.11deg, #1E5DFF 34.39%, #CB96EB 47.78%, #EC7F3C 57.15%),
+      linear-gradient(0deg, #FFFFFF, #FFFFFF);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 48px;
+  }
+
+  span:nth-child(3) {
+    color: white;
+
+  }
 }
 
 .text .desc {
@@ -162,7 +194,7 @@ export default {
   background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 159.72%);
   -webkit-background-clip: text;
   color: transparent;
-  font-size: 14px;
+  font-size: 24px;
   text-align: center;
 }
 
@@ -185,53 +217,77 @@ export default {
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.01)),
     linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(20px);
+  /* 10px是模糊半径，可以根据需要调整 */
   transition: 'all 0.3s',
 
 }
 
 .dataCaseWrap .dataCase:hover {
-  border: 1px solid;
+  // background: linear-gradient(99.12deg, rgba(38, 86, 254, 0.3) -7.07%, rgba(255, 148, 95, 0.06) 45.38%, rgba(227, 163, 255, 0.3) 95.01%),
+  //   linear-gradient(100.03deg, rgba(38, 96, 254, 0.08) 7.98%, rgba(212, 144, 189, 0.38) 39.39%, rgba(233, 129, 75, 0.06) 73.51%);
+  // border: 1px solid;
   border-image-source: linear-gradient(100.03deg, rgba(38, 96, 254, 0.08) 7.98%, rgba(212, 144, 189, 0.38) 39.39%, rgba(233, 129, 75, 0.06) 73.51%);
-  background: linear-gradient(99.12deg, rgba(38, 86, 254, 0.3) -7.07%, rgba(255, 148, 95, 0.06) 45.38%, rgba(227, 163, 255, 0.3) 95.01%),
-    linear-gradient(100.03deg, rgba(38, 96, 254, 0.08) 7.98%, rgba(212, 144, 189, 0.38) 39.39%, rgba(233, 129, 75, 0.06) 73.51%);
-
+  background: linear-gradient(99deg, rgba(38, 85.52, 254, 0.30) 1%, rgba(255, 148.39, 94.56, 0.06) 52%, rgba(226.92, 162.56, 255, 0.30) 100%);
+  border-radius: 8px;
+  border: 1px rgba(38, 96, 254, 0.08), rgba(212, 144, 189, 0.38), rgba(233, 129, 75, 0.06) solid;
+  backdrop-filter: blur(20px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
 }
 
 .dataCase .title {
-  color: rgba(255, 255, 255, 1)
+  color: rgba(255, 255, 255, 1); // 2.6K+
+  font-size: 36px;
+  font-family: Mona-Sans;
+  font-weight: 800;
+  line-height: 36px;
+  word-wrap: break-word;
+  margin-bottom: 8px;
 }
 
 .dataCase .desc {
-  color: rgba(255, 255, 255, 0.7)
+  // Galxe users
+  color: rgba(255, 255, 255, 0.70);
+  font-size: 14px;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 20px;
+  word-wrap: break-word
 }
 
-.start {
-  margin-top: 40px;
-  /* width: 202px; */
-  font-size: 20px;
-  background: linear-gradient(0deg, #000000, #000000),
-    linear-gradient(90deg, #1E5DFF 0%, #CB96EB 58.85%, #EC7F3C 100%),
-    linear-gradient(97.12deg, rgba(255, 255, 255, 0.7) -8.02%, rgba(255, 255, 255, 0) 29.37%);
-  color: rgba(255, 255, 255, 1);
 
-  border: 2px solid;
-  /* Set the initial border to be transparent */
-  border-style: solid;
-  border-image-source:
-    linear-gradient(97.12deg, rgba(255, 255, 255, 0.7) -8.02%, rgba(255, 255, 255, 0) 29.37%),
-    linear-gradient(90deg, #1E5DFF 0%, #CB96EB 58.85%, #EC7F3C 100%);
-  border-image-slice: 1;
-  /* Slices the entire image */
-  border-image-width: 2px;
-  /* Width of the border */
-  border-image-outset: 0;
-  /* No outset */
+.start {
+  margin-top: 64px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  left: 44%;
 }
 
 .logolist {
   margin-top: 200px;
-  width: 100%;
+  width: 100vw;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 12px;
+    /* 设置滚动条宽度 */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    /* 设置滚动条滑块颜色 */
+    border-radius: 6px;
+    /* 设置滚动条滑块圆角 */
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* 设置滚动条轨道颜色 */
+  }
+
 }
 
 .logolist svg {

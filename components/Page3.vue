@@ -1,7 +1,7 @@
 <template>
   <div class="decoration page3">
     <div class="text">
-      <div class="title">No Code Plug and Play</div>
+      <div class="title"><span>No Code</span> <span>Plug and Play</span> </div>
       <div class="desc">Choose from a variety of campaign templates and customize with just a few clicks.</div>
     </div>
     <div class="imgWrap" ><img src="@/assets/Content.png" alt="Image" /></div>
@@ -18,7 +18,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="less" scoped>
 .page3 {
   height: 2080px;
 }
@@ -40,11 +40,24 @@ export default {
 }
 
 .text .title {
-  background: linear-gradient(90.27deg, #1E5DFF 27.32%, #CB96EB 38.39%, #EC7F3C 46.12%),
-    linear-gradient(0deg, #FFFFFF, #FFFFFF);
-  -webkit-background-clip: text;
-  color: transparent;
+  font-size: 64px;
+  font-family: Mona-Sans;
+  font-weight: 800;
+  line-height: 56px;
+  text-align: center;
   font-size: 48px;
+  span:nth-child(1) {
+    color: #1E5DFF;
+    background: linear-gradient(90.11deg, #1E5DFF 34.39%, #CB96EB 47.78%, #EC7F3C 57.15%),
+      linear-gradient(0deg, #FFFFFF, #FFFFFF);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  span:nth-child(2) {
+    color: white;
+
+  }
 }
 
 .text .desc {
@@ -56,9 +69,6 @@ export default {
   text-align: center;
 }
 
-.page3 .text .title {
-  font-size: 32px;
-}
 
 .imgWrap {
   margin-top: 40px

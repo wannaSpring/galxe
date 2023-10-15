@@ -3,7 +3,7 @@
     <div class="containerWrap">
       <div class="left">
         <div class="text">
-          <div class="title">All the Rewards that Your Community Deserves</div>
+          <div class="title"><span>All the</span> <span>Rewards</span> <span>that Your Community Deserves</span> </div>
           <div class="desc">Community is what makes web3. You can reward your community and contributors with a variety of
             rewards, from tokens to loyalty points, from achievements to reputation.</div>
         </div>
@@ -31,7 +31,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="less" scoped>
 .page4 {
   height: 980px;
 }
@@ -44,6 +44,7 @@ export default {
   flex-direction: row;
 
 }
+
 .containerWrap {
   width: 1280px;
   display: flex;
@@ -53,26 +54,41 @@ export default {
 }
 
 .left {
-  width: 568px;
+  width: 589px;
 }
 
 .right {
   width: 640px;
 }
+
 .text {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* 左对齐 */
+  justify-content: flex-start;
+  /* 左对齐 */
   flex-direction: column;
 }
 
 .text .title {
-  background: linear-gradient(90.27deg, #1E5DFF 27.32%, #CB96EB 38.39%, #EC7F3C 46.12%),
-    linear-gradient(0deg, #FFFFFF, #FFFFFF);
-  -webkit-background-clip: text;
-  color: transparent;
-  font-size: 48px;
+  font-size: 64px;
+  font-family: Mona-Sans;
+  font-weight: 800;
+  line-height: 56px;
   text-align: left;
+  font-size: 48px;
+  span {
+    color: white;
+
+  }
+  span:nth-child(2) {
+    color: #1E5DFF;
+    background: linear-gradient(90.11deg, #1E5DFF 34.39%, #CB96EB 47.78%, #EC7F3C 57.15%),
+      linear-gradient(0deg, #FFFFFF, #FFFFFF);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+
 }
 
 .text .desc {
@@ -80,17 +96,16 @@ export default {
   background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 159.72%);
   -webkit-background-clip: text;
   color: transparent;
-  font-size: 14px;
-  text-align: left; /* 左对齐 */
-  width: 100%; /* 自动适应父元素宽度 */
+  font-size: 24px;
+  text-align: left;
+  /* 左对齐 */
+  width: 100%;
+  /* 自动适应父元素宽度 */
 }
+
 .imageWrap {
-  margin-top: 20px;
+  margin-top: 48px;
 }
-
-
-
-
 </style>
 
 

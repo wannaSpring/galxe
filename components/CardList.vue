@@ -1,7 +1,7 @@
 <template>
   <div class="cardList">
     <div v-for="item in list" :key="`IconTab${item.id}`" class="cardItem">
-      <div>
+      <div class="imgWrap">
         <component :is="`IconTab${item.id}`" />
       </div>
       <div class="textWrap">
@@ -78,7 +78,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 .cardList {
   margin-top: 80px;
   display: flex;
@@ -103,16 +103,44 @@ export default {
   border-style: solid;
   transition: background-color 3s ease;
   background: transparent;
+  &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4){
+    border-right: 1px solid rgb(35,35,36);
+    border-bottom: 1px solid rgb(35,35,36);
+  }
+  &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8){
+    border-right: 1px solid rgb(35,35,36);
+  }
+  &:nth-child(4), &:nth-child(8){
+    border-right: none;
+  }
+  .imgWrap {
+    height: 120px;
+  }
+  .textWrap {
+    height: 180px;
+  }
 }
 
 .cardItem:hover {
-
   background: radial-gradient(58.21% 58.21% at 57.97% -27.61%, rgba(142, 147, 255, 0.2) 0%, rgba(142, 147, 255, 0) 100%),
     linear-gradient(319.1deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 38.13%),
     linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
   border-width: 0px 1px 1px 0px;
   border-style: solid;
   border-image-source: linear-gradient(319.1deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 38.13%);
+  &:nth-child(1){
+    border-top-left-radius: 20px;
+  }
+  &:nth-child(4){
+    border-top-right-radius: 20px;
+
+  }
+  &:nth-child(5){
+    border-bottom-left-radius: 20px;
+  }
+  &:nth-child(8){
+    border-bottom-right-radius: 20px;
+  }
 }
 
 .title {
@@ -122,7 +150,7 @@ export default {
   letter-spacing: 0em;
   text-align: center;
   color: rgba(255, 255, 255, 1);
-  line-height: 68px;
+  margin: 42px 0 16px 0;
 }
 
 .desc {
@@ -134,6 +162,7 @@ export default {
   text-align: center;
   color: rgba(255, 255, 255, 0.7)
 }
+
 
 /* 样式保持不变 */
 </style>

@@ -4,7 +4,20 @@
     <div class="text">
       <div class="title">Your Web3 Community is Waiting</div>
     </div>
-    <el-button class="start" round>Get Started</el-button>
+    <div class="start">
+        <div
+          style="padding-left: 36px; padding-right: 36px; padding-top: 18px; padding-bottom: 18px; left: 0px; top: 13px; position: absolute; background: linear-gradient(86deg, #3C73F4 0%, #CB96EB 50%, #E27D3F 100%); box-shadow: 40px 40px 40px; border-radius: 8px; filter: blur(40px); justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+          <div
+            style="text-align: center; color: white; font-size: 20px; font-family: Mona-Sans; font-weight: 800; line-height: 28px; word-wrap: break-word">
+            Get Started</div>
+        </div>
+        <div
+          style="padding-left: 36px; padding-right: 36px; padding-top: 18px; padding-bottom: 18px; left: 0px; top: 0px; position: absolute; background: black; border-radius: 32px; border: 2px rgba(255, 255, 255, 0.70) solid; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+          <div
+            style="text-align: center; color: white; font-size: 20px; font-family: Mona-Sans; font-weight: 800; line-height: 28px; word-wrap: break-word">
+            Get Started</div>
+        </div>
+      </div>
   </div>
 </template>
 
@@ -14,10 +27,15 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="less" scoped>
 .Page7 {
   height: 621px;
+  background-image: url('./assets/bg.png'); /* 指定背景图片的路径 */
+  background-size: cover; /* 背景图片铺满整个容器 */
+  background-position-y: 40px;
+  background-repeat: no-repeat;
 }
+
 
 .decoration {
   display: flex;
@@ -46,26 +64,11 @@ text-align: center;
 }
 
 .start {
-  margin-top: 40px;
-  /* width: 202px; */
-  font-size: 20px;
-  background: linear-gradient(0deg, #000000, #000000),
-    linear-gradient(90deg, #1E5DFF 0%, #CB96EB 58.85%, #EC7F3C 100%),
-    linear-gradient(97.12deg, rgba(255, 255, 255, 0.7) -8.02%, rgba(255, 255, 255, 0) 29.37%);
-  color: rgba(255, 255, 255, 1);
-
-  border: 2px solid;
-  /* Set the initial border to be transparent */
-  border-style: solid;
-  border-image-source:
-    linear-gradient(97.12deg, rgba(255, 255, 255, 0.7) -8.02%, rgba(255, 255, 255, 0) 29.37%),
-    linear-gradient(90deg, #1E5DFF 0%, #CB96EB 58.85%, #EC7F3C 100%);
-  border-image-slice: 1;
-  /* Slices the entire image */
-  border-image-width: 2px;
-  /* Width of the border */
-  border-image-outset: 0;
-  /* No outset */
+  margin-top: 64px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  left: 44%;
 }
 </style>
 

@@ -24,7 +24,8 @@ export default {
   css: [
     'element-ui/lib/theme-chalk/index.css'
   ],
-
+  target: 'static',
+  ssr:false,
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '@/plugins/element-ui',
@@ -44,12 +45,15 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-  ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     vendor: ['pixi.js', 'pixi-spine','@pixi'],
+    loaders: {
+      less: {
+        javascriptEnabled: true
+      }
+    },
     transpile: [
       /^element-ui/,
       '@esotericsoftware/spine-core',
