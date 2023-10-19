@@ -1,0 +1,106 @@
+/* Inter-Black */
+@font-face {
+  font-family: 'Inter-Black';
+  src: url('../font/Inter-Black-3.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Inter-Bold */
+@font-face {
+  font-family: 'Inter-Bold';
+  src: url('../font/Inter-Bold-4.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Inter-ExtraBold */
+@font-face {
+  font-family: 'Inter-ExtraBold';
+  src: url('../font/Inter-ExtraBold-5.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Inter-ExtraLight */
+@font-face {
+  font-family: 'Inter-ExtraLight';
+  src: url('../font/Inter-ExtraLight-6.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+/* Inter-Light */
+@font-face {
+  font-family: 'Inter-Light';
+  src: url('../font/Inter-Light-7.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Inter-Medium */
+@font-face {
+  font-family: 'Inter-Medium';
+  src: url('../font/Inter-Medium-8.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Inter-Regular */
+@font-face {
+  font-family: 'Inter-Regular';
+  src: url('../font/Inter-Regular-9.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Inter-SemiBold */
+@font-face {
+  font-family: 'Inter-SemiBold';
+  src: url('../font/Inter-SemiBold-10.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Inter-Thin */
+@font-face {
+  font-family: 'Inter-Thin';
+  src: url('../font/Inter-Thin-11.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* Inter-variable */
+@font-face {
+  font-family: 'Inter-variable';
+  src: url('../font/Inter-var-2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Mona-Sans */
+@font-face {
+  font-family: 'Mona-Sans';
+  src: url('../font/Mona-Sans.woff2') format('woff2'),
+       url('../font/Mona-Sans.woff') format('woff'),
+       url('../font/Mona-Sans.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 导入完所有字体后，你可以将它们应用到你的样式中 */
+
+body {
+  font-family: 'Inter-Regular', sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-family: 'Inter-Bold', sans-serif;
+  font-weight: 700;
+}
+
+p {
+  font-family: 'Mona-Sans', sans-serif;
+  font-weight: normal;
+}

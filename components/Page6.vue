@@ -27,19 +27,34 @@ export default {
 
 <style lang="less" scoped>
 .Page6 {
-  height: 1260px;
+  margin-bottom: 320px;
+
+  @media screen and (max-width: 900px) {
+    margin-bottom: 150px;
+  }
+  @media screen and (max-width: 414px) {
+    margin-bottom: 72px;
+  }
 }
 
 .containerWrap {
   width: 1280px;
+  @media screen and (max-width: 900px) {
+    width: auto;
+  }
 }
 
 
 .decoration {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  padding: 0 320px;
+  @media screen and (max-width: 900px) {
+    padding: 0 48px;
+  }
+  @media screen and (max-width: 414px) {
+    padding: 0 16px;
+  }
 }
 
 .textWrap {
@@ -47,10 +62,12 @@ export default {
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
+  @media screen and (max-width: 414px) {
+    flex-direction: column;
+  }
 }
 
 .text {
-  width: 800px;
   display: flex;
   align-items: start;
   justify-content: center;
@@ -64,7 +81,10 @@ export default {
   line-height: 56px;
   text-align: center;
   font-size: 48px;
+  @media screen and (max-width: 414px) {
+    font-size: 32px;
 
+  }
   span:nth-child(1) {
     color: white;
 
@@ -88,14 +108,19 @@ export default {
   color: transparent;
   font-size: 24px;
   text-align: left;
+  @media screen and (max-width: 414px) {
+    font-size: 16px;
+  }
 }
 
-.Page6 .text .title {
-  font-size: 32px;
-}
 
 .imgWrap {
-  margin-top: 40px
+  margin-top: 40px;
+  width: 100%;
+  img {
+    width: 100%;
+
+  }
 }
 
 .caseBtn {
@@ -103,7 +128,10 @@ export default {
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: rgba(255, 255, 255, 1);
   border-radius: 24px;
+  @media screen and (max-width: 414px) {
+    margin-top: 24px;
 
+  }
 }
 
 .caseBtn span {

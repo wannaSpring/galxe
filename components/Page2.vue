@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Collapse from './Collapse.vue'
+import Collapse from './Collapse/Collapse.vue'
 
 export default {
   name: 'Page2',
@@ -19,23 +19,44 @@ export default {
 
 <style lang="less" scoped>
 .page2 {
-  height: 1092px;
+  margin-bottom: 320px;
+
+
+  @media screen and (max-width: 900px) {
+    margin-bottom: 150px;
+  }
+  @media screen and (max-width: 414px) {
+    margin-bottom: 72px
+  }
 }
 
 
 .decoration {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  // align-items: center;
+  // justify-content: center;
   flex-direction: column;
+  padding: 0 320px;
+
+  @media screen and (max-width: 900px) {
+    // width: 804px;
+    padding: 0 48px;
+  }
+
+  @media screen and (max-width: 414px) {
+    // width: 804px;
+    padding: 0 16px;
+  }
 }
 
 .text {
-  width: 1280px;
+  // width: 1280px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+
 }
 
 .text .title {
@@ -45,6 +66,11 @@ export default {
   line-height: 56px;
   text-align: center;
   font-size: 48px;
+
+  @media screen and (max-width: 414px) {
+    font-size: 32px;
+
+  }
 
   span:nth-child(1) {
     color: white;
@@ -70,11 +96,12 @@ export default {
   background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 159.72%);
   -webkit-background-clip: text;
   color: transparent;
-  font-size: 14px;
+  font-size: 24px;
   text-align: center;
+  @media screen and (max-width: 414px) {
+    font-size: 16px;
+  }
 }
-
-
 </style>
 
 

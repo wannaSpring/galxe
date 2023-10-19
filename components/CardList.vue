@@ -85,13 +85,22 @@ export default {
   flex-wrap: wrap;
   /* justify-content: space-between; */
   border-radius: 8px;
-  width: 1352px;
-  height: 760px;
   overflow: hidden;
+
+  @media screen and (max-width: 900px) {
+    width: calc(100% + 96px);
+    margin-left: -48px
+  }
+
+  @media screen and (max-width: 414px) {
+    width: 100%;
+    flex-direction: column;
+    margin-left: -0
+  }
 }
 
 .cardItem {
-  width: 338px;
+  width: 304px;
   height: 380px;
   box-sizing: border-box;
   display: flex;
@@ -99,25 +108,69 @@ export default {
   justify-content: center;
   flex-direction: column;
   border-width: 0px 1px 1px 0px;
-  padding: 0 16px;
+  padding: 0 12px;
   border-style: solid;
   transition: background-color 3s ease;
   background: transparent;
-  &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4){
-    border-right: 1px solid rgb(35,35,36);
-    border-bottom: 1px solid rgb(35,35,36);
+  cursor: pointer;
+
+  @media screen and (max-width: 900px) {
+    width: 220px;
+    height: auto;
   }
-  &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8){
-    border-right: 1px solid rgb(35,35,36);
+
+  @media screen and (max-width: 414px) {
+    width: 100%;
+    flex-direction: row;
+    border-bottom: 1px solid rgb(35, 35, 36);
+    padding: 0;
   }
-  &:nth-child(4), &:nth-child(8){
-    border-right: none;
+
+  @media screen and (min-width: 415px) {
+
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4) {
+      border-right: 1px solid rgb(35, 35, 36);
+      border-bottom: 1px solid rgb(35, 35, 36);
+    }
+
+    &:nth-child(5),
+    &:nth-child(6),
+    &:nth-child(7),
+    &:nth-child(8) {
+      border-right: 1px solid rgb(35, 35, 36);
+    }
+
+    &:nth-child(4),
+    &:nth-child(8) {
+      border-right: none;
+    }
   }
+
+
+
   .imgWrap {
     height: 120px;
+
+    @media screen and (max-width: 414px) {
+      width: 80px;
+      height: 80px;
+
+      svg {
+        width: 80px;
+        height: 80px;
+      }
+    }
   }
+
   .textWrap {
     height: 180px;
+
+    @media screen and (max-width: 414px) {
+      padding-left: 8px;
+    }
   }
 }
 
@@ -128,19 +181,26 @@ export default {
   border-width: 0px 1px 1px 0px;
   border-style: solid;
   border-image-source: linear-gradient(319.1deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 38.13%);
-  &:nth-child(1){
-    border-top-left-radius: 20px;
-  }
-  &:nth-child(4){
-    border-top-right-radius: 20px;
 
+  @media screen and (min-width: 415px) {
+    &:nth-child(1) {
+      border-top-left-radius: 20px;
+    }
+
+    &:nth-child(4) {
+      border-top-right-radius: 20px;
+
+    }
+
+    &:nth-child(5) {
+      border-bottom-left-radius: 20px;
+    }
+
+    &:nth-child(8) {
+      border-bottom-right-radius: 20px;
+    }
   }
-  &:nth-child(5){
-    border-bottom-left-radius: 20px;
-  }
-  &:nth-child(8){
-    border-bottom-right-radius: 20px;
-  }
+
 }
 
 .title {
@@ -151,6 +211,11 @@ export default {
   text-align: center;
   color: rgba(255, 255, 255, 1);
   margin: 42px 0 16px 0;
+
+  @media screen and (max-width: 414px) {
+    font-size: 18px;
+
+  }
 }
 
 .desc {
@@ -160,9 +225,13 @@ export default {
   line-height: 24px;
   letter-spacing: 0em;
   text-align: center;
-  color: rgba(255, 255, 255, 0.7)
+  color: rgba(255, 255, 255, 0.7);
+
+  @media screen and (max-width: 414px) {
+    font-size: 14px;
+
+  }
 }
 
 
-/* 样式保持不变 */
-</style>
+/* 样式保持不变 */</style>

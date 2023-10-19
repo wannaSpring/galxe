@@ -46,20 +46,30 @@ export default {
 
 <style lang="less" scoped>
 .Page5 {
-  height: 1108px;
+  margin-bottom: 320px;
+
+  @media screen and (max-width: 900px) {
+    height: auto;
+    margin-bottom: 150px;
+  }
+
+  @media screen and (max-width: 414px) {
+    margin-bottom: 72px;
+  }
 }
 
 
 .decoration {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: row;
-
 }
 
 .containerWrap {
-  padding-left: 390px;
+  padding: 0 320px;
+
+  @media screen and (max-width: 900px) {
+    padding: 0 48px;
+  }
 }
 
 .text {
@@ -76,6 +86,11 @@ export default {
   font-size: 48px;
   text-align: left;
   width: 100%;
+
+  @media screen and (max-width: 414px) {
+    font-size: 32px;
+
+  }
 }
 
 .text .desc {
@@ -87,12 +102,23 @@ export default {
   /* 左对齐 */
   width: 100%;
   margin-top: 20px;
+
+  @media screen and (max-width: 414px) {
+    font-size: 16px;
+
+  }
+
   /* 自动适应父元素宽度 */
 }
 
 .cardListWrap {
   overflow-x: auto;
   width: 1500px;
+
+  @media screen and (max-width: 414px) {
+    width: 500px;
+
+  }
 
   &::-webkit-scrollbar {
     width: 12px;
@@ -119,6 +145,10 @@ export default {
     width: 1663px;
     padding: 0 20px;
 
+    @media screen and (max-width: 414px) {
+      width: 1263px;
+
+    }
 
   }
 }
@@ -133,11 +163,27 @@ export default {
   justify-content: space-between;
   flex-direction: column;
   margin-right: 20px;
+
+  @media screen and (max-width: 414px) {
+    width: 280px;
+    height: auto;
+
+  }
 }
 
 .cardItem .imgWrap {
   width: 400px;
   height: 400px;
+
+  @media screen and (max-width: 414px) {
+    width: 280px;
+    height: 280px;
+
+    img {
+      width: 280px;
+      height: 280px;
+    }
+  }
 }
 
 .cardItem .text {
@@ -156,7 +202,13 @@ export default {
   line-height: 34px;
   letter-spacing: 0em;
   text-align: left;
-  color: rgba(255, 255, 255, 1)
+  color: rgba(255, 255, 255, 1);
+
+  @media screen and (max-width: 414px) {
+    margin-top: 24px;
+    font-size: 18px;
+
+  }
 }
 
 .cardItem .desc {
@@ -166,7 +218,12 @@ export default {
   line-height: 24px;
   letter-spacing: 0em;
   text-align: left;
-  color: rgba(255, 255, 255, 0.7)
+
+  color: rgba(255, 255, 255, 0.7);
+
+  @media screen and (max-width: 414px) {
+    font-size: 14px;
+  }
 }
 </style>
 

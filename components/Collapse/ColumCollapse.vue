@@ -1,16 +1,9 @@
 <template>
-  <div class="image-collapse">
-    <!-- 左侧图片展示区 -->
-
-    <div class="image-container">
-      <img :src="imageUrl" alt="Image" />
-    </div>
-
-    <!-- 右侧折叠项 -->
-    <div class="collapse-items">
-      <transition-group name="list" tag="ul">
-        <div v-for="(item, index) in items" :key="index"
-          :class="{ 'collapse-item': true, 'collapse-item-open': !item.isCollapsed }">
+  <div class="s-collapse-items">
+    <transition-group name="list" tag="ul">
+      <div v-for="(item, index) in items" :key="index"
+        :class="{ 'collapse-item': true, 'collapse-item-open': !item.isCollapsed }">
+        <div class="collapse-item-context">
           <div class="item-header" @click="toggleCollapse(index)">
             {{ item.title }}
             <span :style="{ display: 'inline-block', transform: item.isCollapsed ? 'rotate(0deg)' : 'rotate(180deg)' }">
@@ -23,13 +16,17 @@
             </div>
           </transition>
         </div>
-      </transition-group>
-    </div>
+        <div class="collapse-item-image">
+          <img :src="item.imageUrl" alt="Image" />
+        </div>
+
+      </div>
+    </transition-group>
   </div>
 </template>
 
 <script>
-import Arrow from './svg/Arrow.vue'
+import Arrow from '../svg/Arrow.vue'
 import png1 from '@/assets/Frame119_1.png'
 import png2 from '@/assets/Frame119_2.png'
 import png3 from '@/assets/Frame119_3.png'
@@ -39,7 +36,7 @@ import png6 from '@/assets/Frame119_6.png'
 
 export default {
   components: { Arrow },
-  name: 'Collapse',
+  name: 'ColumCollapse',
 
   data() {
     return {
@@ -105,8 +102,9 @@ export default {
 };
 </script>
 
-<style scoped>
-.list-move, /* 对移动中的元素应用的过渡 */
+<style lang="less" scoped>
+.list-move,
+/* 对移动中的元素应用的过渡 */
 .list-enter-active,
 .list-leave-active {
   transition: all 0.2s ease !important;
@@ -132,25 +130,16 @@ export default {
   margin-top: 52px;
 }
 
-.image-container {
+
+.s-collapse-items {
   flex: 1;
-  /* 调整左侧图片的宽度 */
+  width: 100%;
+  ul {
+    padding-inline-start: 0;
+  }
 }
 
-.image-container img {
-  width: 680px;
-  height: 600px;
-}
-
-
-.collapse-items {
-  flex: 1;
-  width: 612px;
-  height: 620px;
-  margin-left: 24px;
-}
-
-.collapse-item {
+.collapse-item-context {
   /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
   color: rgba(255, 255, 255, 1);
   /* height: 76.4px; */
@@ -160,11 +149,18 @@ export default {
   /* 固定折叠项的宽度 */
   overflow: hidden;
   /* transition: all 0.3s; */
-  padding: 22px 32px;
+  padding: 32px;
   position: relative;
+
 }
 
-.collapse-item ::before {
+.collapse-item-image {
+  display: none;
+}
+
+.collapse-item-context::before {
+  display: none;
+  left: 26px;
   content: '';
   position: absolute;
   top: 0;
@@ -175,32 +171,37 @@ export default {
   pointer-events: none;
 }
 
-.collapse-item-open ::before {
-  display: none;
-}
-
-.collapse-item ::before {
-  left: 26px;
-  /* 设置 ::before 的右侧边框长度为元素宽度的 20% */
-}
-
-
 
 .collapse-item-open {
-  min-height: 96px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 20px;
-  border: 1px;
-  background: linear-gradient(100.03deg, rgba(38, 96, 254, 0.08) 7.98%, rgba(212, 144, 189, 0.38) 39.39%, rgba(233, 129, 75, 0.06) 73.51%),
-    linear-gradient(98.21deg, rgba(42, 38, 254, 0.2) -17.89%, rgba(205, 150, 229, 0.2) 40.78%, rgba(233, 130, 78, 0.04) 94.84%);
-  border: 1px solid;
-  border-image-source: linear-gradient(100.03deg, rgba(38, 96, 254, 0.08) 7.98%, rgba(212, 144, 189, 0.38) 39.39%, rgba(233, 129, 75, 0.06) 73.51%);
-  /* 固定折叠项的宽度 */
-  border-radius: 20px;
-  overflow: hidden;
+  .collapse-item-context {
+    min-height: 96px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    border: 1px;
+    background: linear-gradient(100.03deg, rgba(38, 96, 254, 0.08) 7.98%, rgba(212, 144, 189, 0.38) 39.39%, rgba(233, 129, 75, 0.06) 73.51%),
+      linear-gradient(98.21deg, rgba(42, 38, 254, 0.2) -17.89%, rgba(205, 150, 229, 0.2) 40.78%, rgba(233, 130, 78, 0.04) 94.84%);
+    border: 1px solid;
+    border-image-source: linear-gradient(100.03deg, rgba(38, 96, 254, 0.08) 7.98%, rgba(212, 144, 189, 0.38) 39.39%, rgba(233, 129, 75, 0.06) 73.51%);
+    /* 固定折叠项的宽度 */
+    border-radius: 20px;
+    overflow: hidden;
+
+  }
+
+  .collapse-item-image {
+    margin-top: 48px;
+    display: inline-block;
+    width: 100%;
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+    }
+  }
 }
+
 
 .item-header {
   cursor: pointer;
@@ -214,7 +215,6 @@ export default {
   font-weight: 800;
   line-height: 32px;
   word-wrap: break-word;
-  margin-bottom: 16px;
 }
 
 .item-header span {
@@ -222,6 +222,7 @@ export default {
 }
 
 .item-content {
+  margin-top: 16px;
   overflow: hidden;
   transition: all 3s;
   color: #CED3DB;

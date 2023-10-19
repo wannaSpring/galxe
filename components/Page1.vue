@@ -136,30 +136,60 @@ export default {
 <style lang="less" scoped>
 .page1Wrap {
   /* width: 1920px; */
-  height: 1289px;
   padding-top: 20%;
+  position: relative;
+  margin-bottom: 320px;
+
+  @media screen and (max-width: 414px) {
+
+    height: 1400px;
+  }
+
+  &::before {
+    content: '';
+    /* 伪元素需要一个内容属性 */
+    background-image: url("@/assets/bg1.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    width: 100%;
+    height: 50%;
+    transform: rotate(180deg);
+    position: absolute;
+    top: 0;
+    /* 旋转伪元素，而不影响原始元素 */
+  }
 }
 
 .decoration {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
 
 .page1 {
   position: absolute;
   left: 0;
-  padding-top: 24%;
+  padding-top: 320px;
   top: 0;
+
 }
 
 .text {
-  width: 1280px;
+  // width: 1280px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 0 320px;
+
+  @media screen and (max-width: 900px) {
+    padding: 0 48px;
+  }
+
+  @media screen and (max-width: 414px) {
+    padding: 0 16px;
+    width: 382px;
+  }
 }
 
 .text .title {
@@ -168,6 +198,10 @@ export default {
   font-weight: 800;
   line-height: 56px;
   text-align: center;
+
+  @media screen and (max-width: 414px) {
+    font-size: 32px;
+  }
 
   span:nth-child(1) {
     color: white;
@@ -181,6 +215,10 @@ export default {
     -webkit-background-clip: text;
     color: transparent;
     font-size: 48px;
+
+    @media screen and (max-width: 414px) {
+      font-size: 32px;
+    }
   }
 
   span:nth-child(3) {
@@ -203,6 +241,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 414px) {
+    flex-direction: column;
+    padding: 0 16px;
+  }
+
 }
 
 .dataCaseWrap .dataCase {
@@ -219,8 +263,21 @@ export default {
     linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
   backdrop-filter: blur(20px);
   /* 10px是模糊半径，可以根据需要调整 */
-  transition: 'all 0.3s',
+  transition: 'all 0.3s';
 
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @media screen and (max-width: 900px) {
+    width: 189px;
+  }
+
+  @media screen and (max-width: 414px) {
+    width: 100% !important;
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
 }
 
 .dataCaseWrap .dataCase:hover {
@@ -265,12 +322,19 @@ export default {
   height: 100%;
   position: relative;
   left: 44%;
+  cursor: pointer;
+  @media screen and (max-width: 414px) {
+    left: 30%;
+  }
 }
 
 .logolist {
-  margin-top: 200px;
+  margin-top: 420px;
   width: 100vw;
   overflow-y: auto;
+  @media screen and (max-width: 414px) {
+    margin-top: 244px;
+  }
   &::-webkit-scrollbar {
     width: 12px;
     /* 设置滚动条宽度 */
@@ -292,8 +356,7 @@ export default {
 
 .logolist svg {
   width: 100%;
-}
-</style>
+}</style>
 
 
 

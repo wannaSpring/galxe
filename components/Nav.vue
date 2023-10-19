@@ -83,6 +83,18 @@
           </svg>
         </span>
       </el-button>
+      <el-button circle class="iconInh5 icon">
+        <span class="iconNote">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="Navigation/MwebMenu">
+              <path id="Union" fill-rule="evenodd" clip-rule="evenodd"
+                d="M3 5C3 4.72386 3.22386 4.5 3.5 4.5H20.5C20.7761 4.5 21 4.72386 21 5C21 5.27614 20.7761 5.5 20.5 5.5H3.5C3.22386 5.5 3 5.27614 3 5ZM3 12.0625C3 11.7518 3.25184 11.5 3.5625 11.5H20.4375C20.7482 11.5 21 11.7518 21 12.0625C21 12.3732 20.7482 12.625 20.4375 12.625H3.5625C3.25184 12.625 3 12.3732 3 12.0625ZM3.5625 18.5C3.25184 18.5 3 18.7518 3 19.0625C3 19.3732 3.25184 19.625 3.5625 19.625H20.4375C20.7482 19.625 21 19.3732 21 19.0625C21 18.7518 20.7482 18.5 20.4375 18.5H3.5625Z"
+                fill="white" />
+            </g>
+          </svg>
+
+        </span>
+      </el-button>
     </div>
   </div>
 </template>
@@ -96,7 +108,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="less" scoped>
 .nav {
   display: flex;
   align-items: center;
@@ -104,13 +116,50 @@ export default {
   background-color: #060808;
   height: 80px;
   padding: 0 72px;
+
+  @media screen and (max-width: 414px) {
+    padding: 0 28px;
+  }
 }
 
 .el-menu-demo {
   display: flex;
   align-items: center;
   height: 80px;
+
   /* justify-content: center; */
+  @media screen and (max-width: 900px) {
+
+    .el-submenu,
+    .el-menu-item {
+      display: none;
+    }
+  }
+
+
+}
+
+@media screen and (max-width: 414px) {
+
+  .lanuch,
+  .eth {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 415px) {
+  .iconInh5 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .iconInh5 {
+    display: inline-block;
+    .iconNote{
+      margin-top: -7px;
+    }
+  }
 }
 
 .logo {
@@ -142,7 +191,7 @@ export default {
   display: flex-inline-block;
   align-items: center;
   justify-content: center;
-  margin-right: 12px;
+  margin-left: 12px;
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -151,5 +200,4 @@ export default {
   height: 20px;
   display: inline-flex;
   margin: -4px 0 0 -5px;
-}
-</style>
+}</style>
