@@ -38,7 +38,7 @@ export default {
 }
 
 .containerWrap {
-  width: 1280px;
+  // width: 1280px;
   @media screen and (max-width: 900px) {
     width: auto;
   }

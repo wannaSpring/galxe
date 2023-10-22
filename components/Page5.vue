@@ -142,8 +142,7 @@ export default {
     align-items: center;
     justify-content: center;
     margin-top: 40px;
-    width: 1663px;
-    padding: 0 20px;
+    width: 1679px;
 
     @media screen and (max-width: 414px) {
       width: 1263px;
@@ -203,7 +202,6 @@ export default {
   letter-spacing: 0em;
   text-align: left;
   color: rgba(255, 255, 255, 1);
-
   @media screen and (max-width: 414px) {
     margin-top: 24px;
     font-size: 18px;

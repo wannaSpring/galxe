@@ -308,7 +308,7 @@ export default {
 .dataCase .desc {
   // Galxe users
   color: rgba(255, 255, 255, 0.70);
-  font-size: 14px;
+  font-size: 16px;
   font-family: Inter;
   font-weight: 400;
   line-height: 20px;
@@ -322,6 +322,7 @@ export default {
   height: 100%;
   position: relative;
   left: 44%;
+  
   cursor: pointer;
   @media screen and (max-width: 414px) {
     left: 30%;

@@ -80,12 +80,14 @@ export default {
 
 <style lang="less" scoped>
 .cardList {
-  margin-top: 80px;
+  // margin-top: 80px;
   display: flex;
   flex-wrap: wrap;
   /* justify-content: space-between; */
   border-radius: 8px;
   overflow: hidden;
+  width: 1352px;
+  margin: 80px auto 0 auto;
 
   @media screen and (max-width: 900px) {
     width: calc(100% + 96px);
@@ -210,7 +212,7 @@ export default {
   letter-spacing: 0em;
   text-align: center;
   color: rgba(255, 255, 255, 1);
-  margin: 42px 0 16px 0;
+  margin: 42px 0 8px 0;
 
   @media screen and (max-width: 414px) {
     font-size: 18px;

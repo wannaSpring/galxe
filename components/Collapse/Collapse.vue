@@ -6,7 +6,9 @@
     <!-- 左侧图片展示区 -->
 
     <div class="image-container">
-      <img :src="imageUrl" alt="Image" />
+      <div class="bg">
+        <img :src="imageUrl" alt="Image" />
+      </div>
     </div>
 
     <!-- 右侧折叠项 -->
@@ -123,7 +125,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 .list-move,
 /* 对移动中的元素应用的过渡 */
 .list-enter-active,
@@ -145,7 +147,7 @@ export default {
 
 .image-collapse {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   padding: 0 16px;
   margin-top: 52px;
@@ -153,15 +155,22 @@ export default {
 
 .image-container {
   flex: 1;
-  /* 调整左侧图片的宽度 */
+
+  .bg {
+    padding: 80px 0 0 80px;
+    width: 600px;
+    height: 520px;
+    box-sizing: border-box;
+    background: linear-gradient(rgba(30, 93, 255, 0.2), rgba(203, 150, 235, 0.49), rgba(236, 127, 60, 0.03));
+    border-radius: 12px;
+    img {
+      width: 520px;
+      height: 440px;
+      border-radius: 12px;
+    }
+  }
 }
 
-.image-container img {
-  width: 680px;
-  height: 600px;
-  border-radius: 12px;
-
-}
 
 
 .collapse-items {
@@ -169,6 +178,13 @@ export default {
   width: 612px;
   height: 620px;
   margin-left: 24px;
+  ul {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+  }
 }
 
 .collapse-item {
@@ -181,7 +197,7 @@ export default {
   /* 固定折叠项的宽度 */
   overflow: hidden;
   /* transition: all 0.3s; */
-  padding: 32px;
+  padding: 28px 32px;
   position: relative;
 }
 
